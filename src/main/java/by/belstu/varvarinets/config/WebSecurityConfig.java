@@ -15,10 +15,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        System.out.println("------------TEST-----------!!!!!!!");
         http
                 .authorizeRequests().
-                antMatchers("/", "/resources/**").permitAll()
+                antMatchers("/", "/resources/**","/registration","/register").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
